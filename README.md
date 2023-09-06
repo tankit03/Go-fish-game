@@ -1,50 +1,71 @@
-# Go Fish Game
+# Go Fish Game Program Description
 
-## Problem Statement
+## Introduction
 
-In this assignment, you will create a program that allows one player to play a game of Go Fish against the computer. Go Fish is a card game using a standard deck of 52 cards, where players collect sets of four cards of the same rank. The game proceeds as follows:
+This program is designed to simulate a game of Go Fish between a human player and a computer opponent. Go Fish is a card game played with a standard deck of 52 cards. The objective of the game is to collect as many sets of four cards of the same rank as possible. The game proceeds as follows:
 
-1. The deck of cards is shuffled.
-2. Each player is dealt 7 cards.
-3. The remaining cards form the "stock."
+1. The deck of cards is shuffled to randomize the card order.
+2. Each player is dealt 7 cards from the shuffled deck.
+3. The remaining cards form the "stock" from which players can draw.
 4. Players take turns asking each other for cards of a specific rank.
 5. If the other player has the requested cards, they must give them to the asking player.
-6. If the other player doesn't have the requested cards, the asking player draws from the stock.
-7. The game continues until all books (sets of four cards of the same rank) are laid down.
-8. The player with the most books wins.
+6. If the other player does not have the requested cards, the asking player must draw from the stock.
+7. The game continues until all sets of four cards (books) are laid down.
+8. The player with the most books at the end wins the game.
 
-## Required Classes
+## Program Classes
 
-To implement the Go Fish game, create the following classes:
+The program is implemented using several classes to model the game's components:
 
-### Card
+### Card Class
 
-- Private members: rank (0-12) and suit (0-3).
-- Constructors, destructor, accessors, and mutators.
-- Map rank and suit to player-friendly representations (e.g., string representation).
+- Represents a playing card with rank and suit.
+- Includes constructors, destructor, accessors, and mutators.
 
-### Deck
+### Deck Class
 
-- Private members: cards (an array of Card objects) and n_cards (number of remaining cards).
-- Constructors, destructor, accessors, and mutators.
-- Function to remove and return a card from the deck.
+- Represents the deck of 52 cards.
+- Includes constructors, destructor, accessors, and mutators.
+- Provides a function to remove and return cards from the deck.
 
-### Hand
+### Hand Class
 
-- Private members: cards (an array of Card objects) and n_cards (number of cards in hand).
-- Constructors, destructor, accessors, and mutators.
-- Functions to add and remove cards from the hand, check for books, and remove books.
+- Represents a player's hand of cards.
+- Includes constructors, destructor, accessors, and mutators.
+- Functions to add and remove cards, check for books, and manage the hand.
 
-### Player
+### Player Class
 
-- Private members: hand (Hand object), books (array of ranks with books), and n_books (number of books).
-- Constructors, destructor, accessors, and mutators.
-- Functions to manage the player's hand, check for books, and determine which rank to ask for.
+- Represents a player in the game.
+- Includes constructors, destructor, accessors, and mutators.
+- Functions to manage the player's hand, check for books, and decide which rank to ask for.
 
-### Game
+### Game Class
 
-- Private members: d (Deck object) and players (array of two Player objects).
-- Constructors, destructor, accessors, and mutators.
+- Manages the overall game state.
+- Includes constructors, destructor, accessors, and mutators.
 - Functions to check if the game is over and execute a player's turn.
 
-Have fun playing Go Fish!
+## Game Flow
+
+The program follows these key steps during gameplay:
+
+1. Initialization: Create and shuffle a deck, deal cards to players.
+2. Turn-based Play: Players take turns asking for cards and drawing from the stock.
+3. Book Formation: Players lay down books of four cards of the same rank.
+4. End of Game: Determine the winner based on the number of books.
+5. Option to Play Again: Ask the user if they want to start a new game.
+
+## Debug Mode
+
+The program includes a debug mode that allows the user to see the computer player's cards and books for testing and analysis.
+
+## Implementation Details
+
+- Accessor functions, mutator functions, constructors, copy constructor, destructors, and assignment operator overloads are implemented as needed.
+- The program is compiled using a makefile.
+- Files are organized into .h and .cpp files for each class, with a separate driver file for running the game.
+
+## Enjoy Playing Go Fish!
+
+Have fun playing Go Fish with this program! Feel free to toggle debug mode for a closer look at the computer player's strategies.
